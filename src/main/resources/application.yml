@@ -1,0 +1,22 @@
+server:
+  port: 8000
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/${DATABASE_NAME}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+
+
+
+DATABASE_NAME: verbose_octo_broccoli
+DATABASE_USERNAME: root
+DATABASE_PASSWORD: 12345
+
+appDescription: "verbose_octo_broccoli API"
+appVersion: "1.0"
