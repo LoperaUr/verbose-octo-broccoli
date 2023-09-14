@@ -1,4 +1,3 @@
-<!-- HISTORIAS DE USUARIO (HUs) -->
 ## HISTORIAS DE USUARIO (HUs)
 
 1. **HU01: REGISTRO DE USUARIOS**
@@ -8,41 +7,39 @@
         - Se deben proporcionar detalles como nombre, correo electrónico y contraseña.
         - Los usuarios registrados deben ser almacenados en la base de datos con encriptación de contraseña.
 
-
-2. **HU02: AGREGAR PRODUCTOS AL CATÁLOGO**
-    - Como administrador, quiero poder agregar nuevos productos al catálogo de la tienda.
+2. **HU02: INICIO DE SESIÓN DE USUARIOS**
+    - Como usuario registrado, quiero poder iniciar sesión en mi cuenta.
     - **Criterios de Aceptación:**
-        - Debe existir una API para agregar nuevos productos.
-        - Se deben proporcionar detalles como nombre del producto, descripción y precio.
-        - Los productos deben ser almacenados en la base de datos.
+        - Debe existir una API para iniciar sesión de usuarios.
+        - Los usuarios deben poder ingresar su correo electrónico y contraseña.
+        - Solo los usuarios registrados pueden iniciar sesión.
+        - Una vez iniciada la sesión, el usuario debe recibir un token de autenticación válido.
 
-
-3. **HU03: AGREGAR PRODUCTOS AL CARRITO**
-    - Como usuario, quiero poder agregar productos al carrito de compras.
+3. **HU03: RECUPERACIÓN DE CONTRASEÑA**
+    - Como usuario, quiero poder recuperar mi contraseña si la olvido.
     - **Criterios de Aceptación:**
-        - Debe existir una API para agregar productos al carrito de un usuario.
-        - Se debe proporcionar el ID del producto y la cantidad.
-        - Los detalles del carrito deben ser almacenados en la base de datos.
+        - Debe existir una opción para que los usuarios recuperen su contraseña olvidada.
+        - El usuario debe proporcionar su correo electrónico registrado.
+        - Se debe enviar un correo electrónico con un enlace de restablecimiento de contraseña al usuario.
+        - El enlace debe ser de un solo uso y tener una duración limitada.
 
-
-4. **HU04: REALIZAR UNA ORDEN DE COMPRA**
-    - Como usuario, quiero poder realizar una orden de compra con los productos en mi carrito.
+4. **HU04: ACTUALIZACIÓN DE DATOS DE USUARIO**
+    - Como usuario registrado, quiero poder actualizar mi información de perfil.
     - **Criterios de Aceptación:**
-        - Debe existir una API para crear una nueva orden de compra.
-        - Se debe proporcionar el ID del usuario.
-        - Los productos del carrito deben ser asociados a la orden y retirados del inventario.
+        - Debe existir una API para actualizar los detalles del usuario.
+        - Los usuarios deben poder cambiar su nombre, dirección de correo electrónico y contraseña.
+        - Se debe verificar la contraseña actual del usuario antes de permitir cambios.
 
-
-5. **HU05: VER HISTORIAL DE ÓRDENES**
-    - Como usuario, quiero ver el historial de mis órdenes anteriores.
+5. **HU05: CIERRE DE SESIÓN**
+    - Como usuario, quiero poder cerrar sesión en mi cuenta.
     - **Criterios de Aceptación:**
-        - Debe existir una API para obtener el historial de órdenes de un usuario.
-        - Las órdenes deben ser recuperadas desde la base de datos y devueltas como respuesta.
+        - Debe existir una API para cerrar sesión de usuarios.
+        - Los usuarios deben poder cerrar sesión de manera segura.
+        - Una vez cerrada la sesión, el token de autenticación debe invalidarse.
 
-
-6. **HU06: ADMINISTRAR INVENTARIO**
-    - Como administrador, quiero poder gestionar el inventario de productos.
+6. **HU06: ELIMINACIÓN DE CUENTA DE USUARIO**
+    - Como usuario registrado, quiero poder eliminar permanentemente mi cuenta de usuario.
     - **Criterios de Aceptación:**
-        - Debe existir una API para actualizar la información de los productos en el catálogo.
-        - Se debe proporcionar el ID del producto y los nuevos detalles.
-        - Los cambios deben ser almacenados en la base de datos.
+        - Debe existir una opción para que los usuarios eliminen sus cuentas.
+        - Se debe solicitar una confirmación antes de eliminar la cuenta.
+        - Una vez eliminada la cuenta, todos los datos relacionados con el usuario deben eliminarse de la base de datos.
