@@ -2,6 +2,7 @@ package com.pgm.verboseoctobroccoli.infrastructure.config;
 
 import com.pgm.verboseoctobroccoli.domain.api.IUserServicePort;
 import com.pgm.verboseoctobroccoli.domain.spi.IUserPersistencePort;
+import com.pgm.verboseoctobroccoli.domain.spi.IoCTestUserRepo;
 import com.pgm.verboseoctobroccoli.domain.usecase.UserUseCase;
 import com.pgm.verboseoctobroccoli.infrastructure.output.jpa.adapter.UserJpaAdapter;
 import com.pgm.verboseoctobroccoli.infrastructure.output.jpa.mapper.UserEntityMapper;
@@ -16,6 +17,7 @@ import org.springframework.context.annotation.Configuration;
 public class BeanConfiguration {
     private final IUserRepository userRepository;
     private final UserEntityMapper userEntityMapper;
+    private final IoCTestUserRepo ioCTestUserRepo;
 
 
     @Bean
@@ -24,8 +26,8 @@ public class BeanConfiguration {
     }
 
     @Bean
-    public IUserServicePort userServicePort(){
-        return new UserUseCase(userPersistencePort());
+    public IUserServicePort userServicePort() {
+        return new UserUseCase(userPersistencePort(), ioCTestUserRepo);
     }
 
 
