@@ -1,13 +1,13 @@
 ## HISTORIAS DE USUARIO (HUs)
 
-1. **HU01: REGISTRO DE USUARIOS**
+1. **HU01: REGISTRO DE USUARIOS** ✔✔
     - Como usuario, quiero poder registrarme en la tienda en línea.
     - **Criterios de Aceptación:**
         - Debe existir una API para registrar nuevos usuarios.
         - Se deben proporcionar detalles como nombre, correo electrónico y contraseña.
         - Los usuarios registrados deben ser almacenados en la base de datos con encriptación de contraseña.
 
-2. **HU02: INICIO DE SESIÓN DE USUARIOS**
+2. **HU02: INICIO DE SESIÓN DE USUARIOS** ✔✔
     - Como usuario registrado, quiero poder iniciar sesión en mi cuenta.
     - **Criterios de Aceptación:**
         - Debe existir una API para iniciar sesión de usuarios.
