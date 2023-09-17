@@ -11,9 +11,6 @@ spring:
     hibernate:
       ddl-auto: update
 
-
-
-
 DATABASE_NAME: verbose_octo_broccoli
 DATABASE_USERNAME: root
 DATABASE_PASSWORD: 12345

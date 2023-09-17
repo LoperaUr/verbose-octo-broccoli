@@ -3,7 +3,8 @@ package com.pgm.verboseoctobroccoli.infrastructure.exceptionhandler;
 public enum ExceptionResponse {
     EMAIL_ALREADY_REGISTERED("email already registered"),
     EMAIL_INVALID("email invalid"),
-    PASSWORD_INVALID("password invalid")
+    PASSWORD_INVALID("password invalid"),
+    USER_NOT_FOUND("user not found")
 
     ;
     private String message;

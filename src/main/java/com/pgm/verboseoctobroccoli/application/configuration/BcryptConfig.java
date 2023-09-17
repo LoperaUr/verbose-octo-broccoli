@@ -1,4 +1,4 @@
-package com.pgm.verboseoctobroccoli.application.dto.configuration;
+package com.pgm.verboseoctobroccoli.application.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
