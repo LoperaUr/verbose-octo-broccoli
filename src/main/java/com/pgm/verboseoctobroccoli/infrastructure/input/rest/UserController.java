@@ -15,8 +15,8 @@ import java.util.List;
 @RequestMapping("/users")
 @RequiredArgsConstructor
 public class UserController {
-    private final IUserHandler userHandler;
 
+    private final IUserHandler userHandler;
 
     @PostMapping("/")
     public ResponseEntity<UserResponse> saveUser(@RequestBody UserRequest userRequest) {

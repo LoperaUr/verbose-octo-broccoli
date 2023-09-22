@@ -19,4 +19,6 @@ public interface IUserHandler {
     UserResponse getUserById(Long id);
 
     Page<UserResponse> getAllUsersPageable(Pageable pageable);
+
+
 }
