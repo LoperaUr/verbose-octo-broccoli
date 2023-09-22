@@ -1,0 +1,18 @@
+package com.pgm.verboseoctobroccoli.infrastructure.output.jpa.repository;
+
+import com.pgm.verboseoctobroccoli.domain.spi.CategoryRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
+
+@RequiredArgsConstructor
+@Repository
+public class CategoryRepositoryImpl implements CategoryRepository {
+
+    private final ICategoryRepository categoryRepository;
+
+
+    @Override
+    public boolean existsByName(String name) {
+        return categoryRepository.existsByName(name);
+    }
+}
