@@ -1,7 +1,7 @@
 package com.pgm.verboseoctobroccoli.domain.spi;
 
 
-public interface IoCTestUserRepo {
+public interface UserRepository {
 
     public boolean existsByEmail(String email);
 
