@@ -2,7 +2,6 @@ package com.pgm.verboseoctobroccoli.infrastructure.input.rest;
 
 import com.pgm.verboseoctobroccoli.application.dto.request.UserRequest;
 import com.pgm.verboseoctobroccoli.application.dto.response.UserResponse;
-import com.pgm.verboseoctobroccoli.infrastructure.service.AuthService;
 import com.pgm.verboseoctobroccoli.application.handler.IUserHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -16,9 +15,8 @@ import java.util.List;
 @RequestMapping("/users")
 @RequiredArgsConstructor
 public class UserController {
-    private final IUserHandler userHandler;
-    private final AuthService authService;
 
+    private final IUserHandler userHandler;
 
     @PostMapping("/")
     public ResponseEntity<UserResponse> saveUser(@RequestBody UserRequest userRequest) {
