@@ -22,14 +22,18 @@ public class UserEntity implements UserDetails {
     private String email;
     private String password;
 
+    @ManyToOne
+    @JoinColumn(name = "role", referencedColumnName = "id")
+    private RoleEntity role;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+        return List.of(new SimpleGrantedAuthority(role.getName()));
     }
 
     @Override
     public String getUsername() {
-        return this.name;
+        return email;
     }
 
     @Override

@@ -6,6 +6,15 @@ public class User {
     private String name;
     private String email;
     private String password;
+    private Long role;
+
+    public Long getRole() {
+        return role;
+    }
+
+    public void setRole(Long role) {
+        this.role = role;
+    }
 
     public Long getId() {
         return id;

@@ -11,12 +11,18 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import static org.springframework.http.HttpMethod.GET;
+import static org.springframework.http.HttpMethod.POST;
+
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfig {
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
     private final AuthenticationProvider authProvider;
+
+    public static final String ROLE_ADMIN = "ADMIN";
+    public static final String ROLE_CLIENT = "CLIENT";
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -33,6 +39,10 @@ public class SecurityConfig {
                                         "v3/api-docs/**"
                                 ).permitAll()
                                 .requestMatchers("auth/**").permitAll()
+                                .requestMatchers(POST, "categories/").hasAnyAuthority(ROLE_ADMIN)
+                                .requestMatchers(GET, "categories/").hasAnyAuthority(ROLE_CLIENT, ROLE_ADMIN)
+                                .requestMatchers(POST, "users/").hasAnyAuthority(ROLE_ADMIN)
+                                .requestMatchers(GET, "users/").hasAuthority(ROLE_ADMIN)
                                 .anyRequest().authenticated()
                 )
                 .sessionManagement(sessionManager ->

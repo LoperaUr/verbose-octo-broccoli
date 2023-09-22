@@ -47,4 +47,11 @@ public class ControllerAdvisor {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                 .body(Collections.singletonMap(MESSAGE, ExceptionResponse.REQUEST_BODY_INVALID.getMessage()));
     }
+
+    @ExceptionHandler(InvalidNameException.class)
+    public ResponseEntity<Map<String, String>> handleInvalidNameException(
+            InvalidNameException invalidNameException) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(Collections.singletonMap(MESSAGE, ExceptionResponse.INVALID_NAME.getMessage()));
+    }
 }

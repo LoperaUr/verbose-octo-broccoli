@@ -1,5 +1,7 @@
 package com.pgm.verboseoctobroccoli.domain.util;
 
+import com.pgm.verboseoctobroccoli.domain.model.User;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,5 +23,13 @@ public class ValidationUser {
     public static boolean isValidPasswordStructure(String password) {
         Matcher matcher = PASSWORD_PATTERN.matcher(password);
         return !matcher.matches();
+    }
+
+    public static boolean isValidRole(User user) {
+        return user.getRole() != 1L && user.getRole() != 2L;
+    }
+
+    public static boolean isValidReqBody(User user) {
+        return user.getName().length() < 3 || user.getName() == null || user.getEmail() == null || user.getPassword() == null;
     }
 }

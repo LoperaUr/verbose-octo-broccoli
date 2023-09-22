@@ -1,9 +1,8 @@
-package com.pgm.verboseoctobroccoli.infrastructure.service;
+package com.pgm.verboseoctobroccoli.infrastructure.config.sec;
 
 import com.pgm.verboseoctobroccoli.application.dto.request.LoginRequest;
 import com.pgm.verboseoctobroccoli.application.dto.response.AuthResponse;
 import com.pgm.verboseoctobroccoli.domain.exception.UserNotFoundException;
-import com.pgm.verboseoctobroccoli.infrastructure.config.sec.JwtService;
 import com.pgm.verboseoctobroccoli.infrastructure.output.jpa.repository.IUserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
