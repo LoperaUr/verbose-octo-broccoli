@@ -3,6 +3,7 @@ package com.pgm.verboseoctobroccoli.domain.usecase;
 import com.pgm.verboseoctobroccoli.domain.api.IUserServicePort;
 import com.pgm.verboseoctobroccoli.domain.exception.EmailAlreadyRegisteredException;
 import com.pgm.verboseoctobroccoli.domain.exception.EmailInvalidException;
+import com.pgm.verboseoctobroccoli.domain.exception.RequestBodyInvalidException;
 import com.pgm.verboseoctobroccoli.domain.model.User;
 import com.pgm.verboseoctobroccoli.domain.spi.IUserPersistencePort;
 import com.pgm.verboseoctobroccoli.domain.spi.IoCTestUserRepo;
@@ -31,9 +32,16 @@ public class UserUseCase implements IUserServicePort {
         if (ValidationUser.isValidEmailStructure(user.getEmail())) {
             throw new EmailInvalidException();
         }
-
+        if (ValidationUser.isValidRole(user)) {
+            throw new RequestBodyInvalidException();
+        }
+        if (ValidationUser.isValidReqBody(user)) {
+            throw new RequestBodyInvalidException();
+        }
         return userPersistencePort.saveUser(user);
     }
+
+
 
     @Override
     public List<User> getAllUsers() {
