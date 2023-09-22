@@ -2,9 +2,10 @@ package com.pgm.verboseoctobroccoli.infrastructure.config;
 
 import com.pgm.verboseoctobroccoli.domain.api.ICategoryServicePort;
 import com.pgm.verboseoctobroccoli.domain.api.IUserServicePort;
+import com.pgm.verboseoctobroccoli.domain.spi.CategoryRepository;
 import com.pgm.verboseoctobroccoli.domain.spi.ICategoryPersistencePort;
 import com.pgm.verboseoctobroccoli.domain.spi.IUserPersistencePort;
-import com.pgm.verboseoctobroccoli.domain.spi.IoCTestUserRepo;
+import com.pgm.verboseoctobroccoli.domain.spi.UserRepository;
 import com.pgm.verboseoctobroccoli.domain.usecase.CategoryUseCase;
 import com.pgm.verboseoctobroccoli.domain.usecase.UserUseCase;
 import com.pgm.verboseoctobroccoli.infrastructure.output.jpa.adapter.CategoryJpaAdapter;
@@ -23,9 +24,11 @@ import org.springframework.context.annotation.Configuration;
 public class BeanConfiguration {
     private final IUserRepository userRepository;
     private final UserEntityMapper userEntityMapper;
-    private final IoCTestUserRepo ioCTestUserRepo;
+    private final UserRepository ioCTestUserRepo;
     private final ICategoryRepository categoryRepository;
     private final CategoryEntityMapper categoryEntityMapper;
+    private final CategoryRepository categoryRepositoryDomain;
+
 
 
     @Bean
@@ -45,7 +48,7 @@ public class BeanConfiguration {
 
     @Bean
     public ICategoryServicePort categoryServicePort() {
-        return new CategoryUseCase(categoryPersistencePort());
+        return new CategoryUseCase(categoryPersistencePort(), categoryRepositoryDomain);
     }
 
 }
