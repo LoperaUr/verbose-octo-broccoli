@@ -2,7 +2,7 @@ package com.pgm.verboseoctobroccoli.infrastructure.input.rest;
 
 import com.pgm.verboseoctobroccoli.application.dto.request.LoginRequest;
 import com.pgm.verboseoctobroccoli.application.dto.response.AuthResponse;
-import com.pgm.verboseoctobroccoli.infrastructure.service.AuthService;
+import com.pgm.verboseoctobroccoli.infrastructure.config.sec.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
