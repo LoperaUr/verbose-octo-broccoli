@@ -15,31 +15,18 @@
         - Solo los usuarios registrados pueden iniciar sesión.
         - Una vez iniciada la sesión, el usuario debe recibir un token de autenticación válido.
 
-3. **HU03: RECUPERACIÓN DE CONTRASEÑA**
-    - Como usuario, quiero poder recuperar mi contraseña si la olvido.
+3. **HU03: CREACIÓN DE CATEGORÍAS**
+    - Como administrador de la tienda en línea, quiero poder crear nuevas categorías para organizar los productos.
     - **Criterios de Aceptación:**
-        - Debe existir una opción para que los usuarios recuperen su contraseña olvidada.
-        - El usuario debe proporcionar su correo electrónico registrado.
-        - Se debe enviar un correo electrónico con un enlace de restablecimiento de contraseña al usuario.
-        - El enlace debe ser de un solo uso y tener una duración limitada.
+        - Debe existir una API para crear nuevas categorías.
+        - Se debe proporcionar un nombre y una descripción para la nueva categoría.
+        - Las categorías creadas deben almacenarse en la base de datos.
 
-4. **HU04: ACTUALIZACIÓN DE DATOS DE USUARIO**
-    - Como usuario registrado, quiero poder actualizar mi información de perfil.
+4. **HU04: CREACIÓN DE PRODUCTOS CON CATEGORÍAS**
+    - Como administrador de la tienda en línea, quiero poder crear nuevos productos y asignarlos a categorías
+      existentes.
     - **Criterios de Aceptación:**
-        - Debe existir una API para actualizar los detalles del usuario.
-        - Los usuarios deben poder cambiar su nombre, dirección de correo electrónico y contraseña.
-        - Se debe verificar la contraseña actual del usuario antes de permitir cambios.
-
-5. **HU05: CIERRE DE SESIÓN**
-    - Como usuario, quiero poder cerrar sesión en mi cuenta.
-    - **Criterios de Aceptación:**
-        - Debe existir una API para cerrar sesión de usuarios.
-        - Los usuarios deben poder cerrar sesión de manera segura.
-        - Una vez cerrada la sesión, el token de autenticación debe invalidarse.
-
-6. **HU06: ELIMINACIÓN DE CUENTA DE USUARIO**
-    - Como usuario registrado, quiero poder eliminar permanentemente mi cuenta de usuario.
-    - **Criterios de Aceptación:**
-        - Debe existir una opción para que los usuarios eliminen sus cuentas.
-        - Se debe solicitar una confirmación antes de eliminar la cuenta.
-        - Una vez eliminada la cuenta, todos los datos relacionados con el usuario deben eliminarse de la base de datos.
+        - Debe existir una API para crear nuevos productos.
+        - Se debe proporcionar un nombre, descripción, precio y cantidad en stock para el nuevo producto.
+        - Debe existir una opción para seleccionar una categoría existente a la que se asignará el producto.
+        - Los productos creados deben almacenarse en la base de datos y estar asociados a la categoría seleccionada.
