@@ -6,6 +6,7 @@ public enum ExceptionResponse {
     PASSWORD_INVALID("password invalid"),
     USER_NOT_FOUND("user not found"),
     REQUEST_BODY_INVALID("request body invalid"),
+    INVALID_NAME("invalid name"),
 
     ;
     private String message;
