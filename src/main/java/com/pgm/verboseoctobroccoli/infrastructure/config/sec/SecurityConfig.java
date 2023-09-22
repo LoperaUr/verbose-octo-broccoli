@@ -21,6 +21,9 @@ public class SecurityConfig {
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
     private final AuthenticationProvider authProvider;
 
+    public static final String ROLE_ADMIN = "ADMIN";
+    public static final String ROLE_CLIENT = "CLIENT";
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
@@ -36,8 +39,10 @@ public class SecurityConfig {
                                         "v3/api-docs/**"
                                 ).permitAll()
                                 .requestMatchers("auth/**").permitAll()
-                                .requestMatchers(POST, "categories/").hasAnyAuthority("ADMIN")
-                                .requestMatchers(GET, "categories/").hasAnyAuthority("CLIENT", "ADMIN")
+                                .requestMatchers(POST, "categories/").hasAnyAuthority(ROLE_ADMIN)
+                                .requestMatchers(GET, "categories/").hasAnyAuthority(ROLE_CLIENT, ROLE_ADMIN)
+                                .requestMatchers(POST, "users/").hasAnyAuthority(ROLE_ADMIN)
+                                .requestMatchers(GET, "users/").hasAuthority(ROLE_ADMIN)
                                 .anyRequest().authenticated()
                 )
                 .sessionManagement(sessionManager ->
