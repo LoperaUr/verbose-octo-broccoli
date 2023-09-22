@@ -6,7 +6,7 @@ import com.pgm.verboseoctobroccoli.domain.exception.EmailInvalidException;
 import com.pgm.verboseoctobroccoli.domain.exception.RequestBodyInvalidException;
 import com.pgm.verboseoctobroccoli.domain.model.User;
 import com.pgm.verboseoctobroccoli.domain.spi.IUserPersistencePort;
-import com.pgm.verboseoctobroccoli.domain.spi.IoCTestUserRepo;
+import com.pgm.verboseoctobroccoli.domain.spi.UserRepository;
 import com.pgm.verboseoctobroccoli.domain.util.ValidationUser;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -16,9 +16,9 @@ import java.util.List;
 public class UserUseCase implements IUserServicePort {
 
     private final IUserPersistencePort userPersistencePort;
-    private final IoCTestUserRepo ioCTestUserRepo;
+    private final UserRepository ioCTestUserRepo;
 
-    public UserUseCase(IUserPersistencePort userPersistencePort, IoCTestUserRepo ioCTestUserRepo) {
+    public UserUseCase(IUserPersistencePort userPersistencePort, UserRepository ioCTestUserRepo) {
         this.userPersistencePort = userPersistencePort;
         this.ioCTestUserRepo = ioCTestUserRepo;
     }
