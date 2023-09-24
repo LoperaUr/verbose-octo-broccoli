@@ -31,7 +31,7 @@
     * **Se debe proporcionar un nombre y una descripción para la nueva categoría.**
     * **Las categorías creadas deben almacenarse en la base de datos.**
 
-### HU04: CREACIÓN DE PRODUCTOS CON CATEGORÍAS - DOING
+### HU04: CREACIÓN DE PRODUCTOS CON CATEGORÍAS - OK
 
 * **Número:** 4
 * **Título:** Crear productos y asignarlos a categorías
@@ -39,7 +39,6 @@
 * **Criterios de aceptación:**
     * **Debe existir una API para crear nuevos productos.**
     * **Se debe proporcionar un nombre, descripción, precio y cantidad en stock para el nuevo producto.**
-    * **Debe existir una opción para seleccionar una categoría existente a la que se asignará el producto.**
     * **Los productos creados deben almacenarse en la base de datos y estar asociados a la categoría seleccionada.**
 
 ### HU05: GESTIÓN DE PEDIDOS

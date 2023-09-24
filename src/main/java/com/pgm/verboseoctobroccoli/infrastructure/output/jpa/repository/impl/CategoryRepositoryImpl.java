@@ -16,4 +16,9 @@ public class CategoryRepositoryImpl implements CategoryRepository {
     public boolean existsByName(String name) {
         return categoryRepository.existsByName(name);
     }
+
+    @Override
+    public boolean existsById(Long category) {
+        return categoryRepository.existsById(category);
+    }
 }

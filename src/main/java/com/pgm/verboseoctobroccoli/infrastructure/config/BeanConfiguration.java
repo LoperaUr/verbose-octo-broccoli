@@ -7,6 +7,7 @@ import com.pgm.verboseoctobroccoli.domain.spi.IProductPersistencePort;
 import com.pgm.verboseoctobroccoli.domain.spi.repo.CategoryRepository;
 import com.pgm.verboseoctobroccoli.domain.spi.ICategoryPersistencePort;
 import com.pgm.verboseoctobroccoli.domain.spi.IUserPersistencePort;
+import com.pgm.verboseoctobroccoli.domain.spi.repo.ProductRepository;
 import com.pgm.verboseoctobroccoli.domain.spi.repo.UserRepository;
 import com.pgm.verboseoctobroccoli.domain.usecase.CategoryUseCase;
 import com.pgm.verboseoctobroccoli.domain.usecase.ProductUseCase;
@@ -36,7 +37,7 @@ public class BeanConfiguration {
     private final CategoryRepository categoryRepositoryDomain;
     private final IProductRepository productRepository;
     private final ProductEntityMapper productEntityMapper;
-
+    private final ProductRepository productRepositoryDomain;
 
 
 
@@ -67,7 +68,7 @@ public class BeanConfiguration {
 
     @Bean
     public IProductServicePort productServicePort () {
-        return new ProductUseCase(productPersistencePort());
+        return new ProductUseCase(productPersistencePort(), productRepositoryDomain, categoryRepositoryDomain);
     }
 
 }
