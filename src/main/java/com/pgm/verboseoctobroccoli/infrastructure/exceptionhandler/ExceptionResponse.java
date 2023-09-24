@@ -9,7 +9,8 @@ public enum ExceptionResponse {
     INVALID_NAME("invalid name"),
     INVALID_PRICE("invalid price"),
     INVALID_STOCK("invalid stock"),
-    INVALID_CATEGORY("invalid category")
+    INVALID_CATEGORY("invalid category"),
+    CATEGORY_NOT_FOUND("category not found"),
 
     ;
     private String message;
