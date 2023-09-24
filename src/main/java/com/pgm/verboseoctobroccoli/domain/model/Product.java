@@ -7,15 +7,15 @@ public class Product {
     private Double price;
     private String urlImage;
     private Long stock;
-    private Long categoryId;
+    private Long category;
 
 
-    public Long getCategoryId() {
-        return categoryId;
+    public Long getCategory() {
+        return category;
     }
 
-    public void setCategoryId(Long categoryId) {
-        this.categoryId = categoryId;
+    public void setCategory(Long category) {
+        this.category = category;
     }
 
     public Long getId() {
