@@ -9,8 +9,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
@@ -23,17 +21,12 @@ public class UserController {
         return new ResponseEntity<>(userHandler.saveUser(userRequest), ResponseEntity.ok().build().getStatusCode());
     }
 
-    @GetMapping("/")
-    public ResponseEntity<List<UserResponse>> getAllUsers() {
-        return new ResponseEntity<>(userHandler.getAllUsers(), ResponseEntity.ok().build().getStatusCode());
-    }
-
     @GetMapping("/{id}")
     public ResponseEntity<UserResponse> getUserById(@PathVariable Long id) {
         return new ResponseEntity<>(userHandler.getUserById(id), ResponseEntity.ok().build().getStatusCode());
     }
 
-    @GetMapping("/pg")
+    @GetMapping("/paged")
     public ResponseEntity<Page<UserResponse>> getAllUsersPageable(Pageable pageable) {
         return new ResponseEntity<>(userHandler.getAllUsersPageable(pageable), ResponseEntity.ok().build().getStatusCode());
     }
