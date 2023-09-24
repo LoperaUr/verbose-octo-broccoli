@@ -1,6 +1,6 @@
 ## HISTORIAS DE USUARIO (HUs)
 
-### HU01: REGISTRO DE USUARIOS
+### HU01: REGISTRO DE USUARIOS - OK
 
 * **Número:** 1
 * **Título:** Registrarse en la tienda en línea
@@ -10,7 +10,7 @@
     * **Los usuarios deben poder proporcionar detalles como nombre, correo electrónico y contraseña.**
     * **Los usuarios registrados deben ser almacenados en la base de datos con encriptación de contraseña.**
 
-### HU02: INICIO DE SESIÓN DE USUARIOS
+### HU02: INICIO DE SESIÓN DE USUARIOS - OK
 
 * **Número:** 2
 * **Título:** Iniciar sesión en la cuenta de usuario
@@ -21,7 +21,7 @@
     * **Solo los usuarios registrados pueden iniciar sesión.**
     * **Una vez iniciada la sesión, el usuario debe recibir un token de autenticación válido.**
 
-### HU03: CREACIÓN DE CATEGORÍAS
+### HU03: CREACIÓN DE CATEGORÍAS - OK
 
 * **Número:** 3
 * **Título:** Crear categorías para organizar productos
@@ -31,7 +31,7 @@
     * **Se debe proporcionar un nombre y una descripción para la nueva categoría.**
     * **Las categorías creadas deben almacenarse en la base de datos.**
 
-### HU04: CREACIÓN DE PRODUCTOS CON CATEGORÍAS
+### HU04: CREACIÓN DE PRODUCTOS CON CATEGORÍAS - DOING
 
 * **Número:** 4
 * **Título:** Crear productos y asignarlos a categorías
