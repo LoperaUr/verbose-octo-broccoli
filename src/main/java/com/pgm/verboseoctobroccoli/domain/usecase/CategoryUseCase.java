@@ -4,7 +4,7 @@ import com.pgm.verboseoctobroccoli.domain.api.ICategoryServicePort;
 import com.pgm.verboseoctobroccoli.domain.exception.InvalidNameException;
 import com.pgm.verboseoctobroccoli.domain.exception.RequestBodyInvalidException;
 import com.pgm.verboseoctobroccoli.domain.model.Category;
-import com.pgm.verboseoctobroccoli.domain.spi.CategoryRepository;
+import com.pgm.verboseoctobroccoli.domain.spi.repo.CategoryRepository;
 import com.pgm.verboseoctobroccoli.domain.spi.ICategoryPersistencePort;
 import com.pgm.verboseoctobroccoli.domain.util.ValidateCategory;
 

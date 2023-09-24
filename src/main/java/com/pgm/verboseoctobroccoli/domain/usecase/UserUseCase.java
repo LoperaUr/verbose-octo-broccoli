@@ -6,7 +6,7 @@ import com.pgm.verboseoctobroccoli.domain.exception.EmailInvalidException;
 import com.pgm.verboseoctobroccoli.domain.exception.RequestBodyInvalidException;
 import com.pgm.verboseoctobroccoli.domain.model.User;
 import com.pgm.verboseoctobroccoli.domain.spi.IUserPersistencePort;
-import com.pgm.verboseoctobroccoli.domain.spi.UserRepository;
+import com.pgm.verboseoctobroccoli.domain.spi.repo.UserRepository;
 import com.pgm.verboseoctobroccoli.domain.util.ValidationUser;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

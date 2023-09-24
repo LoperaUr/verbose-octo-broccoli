@@ -1,6 +1,6 @@
 package com.pgm.verboseoctobroccoli.infrastructure.output.jpa.repository;
 
-import com.pgm.verboseoctobroccoli.domain.spi.CategoryRepository;
+import com.pgm.verboseoctobroccoli.domain.spi.repo.CategoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

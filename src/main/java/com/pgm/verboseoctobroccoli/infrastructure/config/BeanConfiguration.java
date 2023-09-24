@@ -2,10 +2,10 @@ package com.pgm.verboseoctobroccoli.infrastructure.config;
 
 import com.pgm.verboseoctobroccoli.domain.api.ICategoryServicePort;
 import com.pgm.verboseoctobroccoli.domain.api.IUserServicePort;
-import com.pgm.verboseoctobroccoli.domain.spi.CategoryRepository;
+import com.pgm.verboseoctobroccoli.domain.spi.repo.CategoryRepository;
 import com.pgm.verboseoctobroccoli.domain.spi.ICategoryPersistencePort;
 import com.pgm.verboseoctobroccoli.domain.spi.IUserPersistencePort;
-import com.pgm.verboseoctobroccoli.domain.spi.UserRepository;
+import com.pgm.verboseoctobroccoli.domain.spi.repo.UserRepository;
 import com.pgm.verboseoctobroccoli.domain.usecase.CategoryUseCase;
 import com.pgm.verboseoctobroccoli.domain.usecase.UserUseCase;
 import com.pgm.verboseoctobroccoli.infrastructure.output.jpa.adapter.CategoryJpaAdapter;
