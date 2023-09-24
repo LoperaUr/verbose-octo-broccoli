@@ -1,18 +1,24 @@
 package com.pgm.verboseoctobroccoli.infrastructure.config;
 
 import com.pgm.verboseoctobroccoli.domain.api.ICategoryServicePort;
+import com.pgm.verboseoctobroccoli.domain.api.IProductServicePort;
 import com.pgm.verboseoctobroccoli.domain.api.IUserServicePort;
-import com.pgm.verboseoctobroccoli.domain.spi.CategoryRepository;
+import com.pgm.verboseoctobroccoli.domain.spi.IProductPersistencePort;
+import com.pgm.verboseoctobroccoli.domain.spi.repo.CategoryRepository;
 import com.pgm.verboseoctobroccoli.domain.spi.ICategoryPersistencePort;
 import com.pgm.verboseoctobroccoli.domain.spi.IUserPersistencePort;
-import com.pgm.verboseoctobroccoli.domain.spi.UserRepository;
+import com.pgm.verboseoctobroccoli.domain.spi.repo.UserRepository;
 import com.pgm.verboseoctobroccoli.domain.usecase.CategoryUseCase;
+import com.pgm.verboseoctobroccoli.domain.usecase.ProductUseCase;
 import com.pgm.verboseoctobroccoli.domain.usecase.UserUseCase;
 import com.pgm.verboseoctobroccoli.infrastructure.output.jpa.adapter.CategoryJpaAdapter;
+import com.pgm.verboseoctobroccoli.infrastructure.output.jpa.adapter.ProductJpaAdapter;
 import com.pgm.verboseoctobroccoli.infrastructure.output.jpa.adapter.UserJpaAdapter;
 import com.pgm.verboseoctobroccoli.infrastructure.output.jpa.mapper.CategoryEntityMapper;
+import com.pgm.verboseoctobroccoli.infrastructure.output.jpa.mapper.ProductEntityMapper;
 import com.pgm.verboseoctobroccoli.infrastructure.output.jpa.mapper.UserEntityMapper;
 import com.pgm.verboseoctobroccoli.infrastructure.output.jpa.repository.ICategoryRepository;
+import com.pgm.verboseoctobroccoli.infrastructure.output.jpa.repository.IProductRepository;
 import com.pgm.verboseoctobroccoli.infrastructure.output.jpa.repository.IUserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -28,6 +34,9 @@ public class BeanConfiguration {
     private final ICategoryRepository categoryRepository;
     private final CategoryEntityMapper categoryEntityMapper;
     private final CategoryRepository categoryRepositoryDomain;
+    private final IProductRepository productRepository;
+    private final ProductEntityMapper productEntityMapper;
+
 
 
 
@@ -49,6 +58,16 @@ public class BeanConfiguration {
     @Bean
     public ICategoryServicePort categoryServicePort() {
         return new CategoryUseCase(categoryPersistencePort(), categoryRepositoryDomain);
+    }
+
+    @Bean
+    public IProductPersistencePort productPersistencePort () {
+        return new ProductJpaAdapter(productRepository, productEntityMapper);
+    }
+
+    @Bean
+    public IProductServicePort productServicePort () {
+        return new ProductUseCase(productPersistencePort());
     }
 
 }

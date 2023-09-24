@@ -43,6 +43,8 @@ public class SecurityConfig {
                                 .requestMatchers(GET, "categories/").hasAnyAuthority(ROLE_CLIENT, ROLE_ADMIN)
                                 .requestMatchers(POST, "users/").hasAnyAuthority(ROLE_ADMIN)
                                 .requestMatchers(GET, "users/").hasAuthority(ROLE_ADMIN)
+                                .requestMatchers(POST, "products/").hasAuthority(ROLE_ADMIN)
+                                .requestMatchers(GET, "products/").hasAnyAuthority(ROLE_CLIENT, ROLE_ADMIN)
                                 .anyRequest().authenticated()
                 )
                 .sessionManagement(sessionManager ->
