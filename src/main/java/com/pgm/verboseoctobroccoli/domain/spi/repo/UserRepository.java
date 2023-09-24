@@ -1,4 +1,4 @@
-package com.pgm.verboseoctobroccoli.domain.spi;
+package com.pgm.verboseoctobroccoli.domain.spi.repo;
 
 
 public interface UserRepository {
