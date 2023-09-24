@@ -7,6 +7,9 @@ public enum ExceptionResponse {
     USER_NOT_FOUND("user not found"),
     REQUEST_BODY_INVALID("request body invalid"),
     INVALID_NAME("invalid name"),
+    INVALID_PRICE("invalid price"),
+    INVALID_STOCK("invalid stock"),
+    INVALID_CATEGORY("invalid category")
 
     ;
     private String message;
