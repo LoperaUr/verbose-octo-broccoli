@@ -45,6 +45,7 @@ public class SecurityConfig {
                                 .requestMatchers(GET, "users/").hasAuthority(ROLE_ADMIN)
                                 .requestMatchers(POST, "products/").hasAuthority(ROLE_ADMIN)
                                 .requestMatchers(GET, "products/").hasAnyAuthority(ROLE_CLIENT, ROLE_ADMIN)
+                                .requestMatchers(POST, "orders/").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .sessionManagement(sessionManager ->
