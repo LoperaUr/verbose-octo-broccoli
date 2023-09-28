@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class OrderItemResponse {
-
-    private Long productId;
+    private Long id;
+    private Long product;
     private int quantity;
 
 }

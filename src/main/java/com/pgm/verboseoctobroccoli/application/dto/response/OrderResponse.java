@@ -5,10 +5,11 @@ import lombok.Data;
 import java.util.List;
 
 @Data
+
 public class OrderResponse {
+
     private Long id;
-    private String addressDelivery;
-    private String addressBilling;
-    private List<OrderItemResponse> orderItems;
+    private String address;
+    private List<OrderItemResponse> items;
 
 }
