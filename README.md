@@ -41,65 +41,15 @@
     * **Se debe proporcionar un nombre, descripción, precio y cantidad en stock para el nuevo producto.**
     * **Los productos creados deben almacenarse en la base de datos y estar asociados a la categoría seleccionada.**
 
-### HU05: GESTIÓN DE PEDIDOS
+### HU05: IMPLEMENTAR MICRO DE TRAZABILIDAD - PENDING
 
 * **Número:** 5
-* **Título:** Realizar un pedido de productos
-* **Descripción:** Como usuario, quiero poder realizar un pedido de productos en la tienda en línea.
+* **Título:** Implementar microservice de traceability
+* **Descripción:** Como administrador de la tienda en línea, quiero poder implementar un microservice de traceability
 * **Criterios de aceptación:**
-    * **Debe existir una API para realizar pedidos.**
-    * **Los usuarios deben poder seleccionar los productos que desean comprar y agregarlos a su carrito de compras.**
-    * **Los usuarios deben poder proporcionar información de envío y facturación.**
-    * **Los pedidos deben almacenarse en la base de datos.**
+    * **Debe existir una API que guarde los logs de:**
+    * **Creación de usuarios**
+    * **Creación de categorías**
+    * **Creación de productos**
+    * **El micro de traceability debe usar una mongodb y estar en un contenedor de docker**
 
-### HU06: SEGUIMIENTO DE PEDIDOS
-
-* **Número:** 6
-* **Título:** Rastrear el estado de un pedido
-* **Descripción:** Como usuario, quiero poder rastrear el estado de mi pedido en la tienda en línea.
-* **Criterios de aceptación:**
-    * **Debe existir una API para rastrear pedidos.**
-    * **Los usuarios deben poder proporcionar el número de seguimiento de su pedido.**
-    * **Los usuarios deben poder ver el estado actual de su pedido.**
-
-### HU07: REVISIONES DE PRODUCTOS
-
-* **Número:** 7
-* **Título:** Escribir una revisión de un producto
-* **Descripción:** Como usuario, quiero poder escribir una revisión de un producto que he comprado en la tienda en línea.
-* **Criterios de aceptación:**
-    * **Debe existir una API para crear revisiones de productos.**
-    * **Los usuarios deben poder proporcionar una calificación y una reseña de un producto.**
-
-### HU08: ADMINISTRACIÓN DE USUARIOS
-
-* **Número:** 8
-* **Título:** Administrar usuarios registrados
-* **Descripción:** Como administrador de la tienda en línea, quiero poder administrar los usuarios registrados para mantener la seguridad y el orden de la tienda.
-* **Criterios de aceptación:**
-    * **Debe existir una API para administrar usuarios.**
-    * **Los administradores deben poder ver una lista de todos los usuarios registrados.**
-    * **Los administradores deben poder editar la información de los usuarios, como el nombre, el correo electrónico y la contraseña.**
-    * **Los administradores deben poder eliminar usuarios registrados.**
-
-### HU09: ADMINISTRACIÓN DE PRODUCTOS
-
-* **Número:** 9
-* **Título:** Administrar productos en la tienda
-* **Descripción:** Como administrador de la tienda en línea, quiero poder administrar los productos en la tienda para mantener la disponibilidad y la calidad de los productos.
-* **Criterios de aceptación:**
-    * **Debe existir una API para administrar productos.**
-    * **Los administradores deben poder ver una lista de todos los productos.**
-    * **Los administradores deben poder editar la información de los productos, como el nombre, la descripción, el precio y la cantidad en stock.**
-    * **Los administradores deben poder agregar o eliminar productos de la tienda.**
-
-### HU10: ADMINISTRACIÓN DE PEDIDOS
-
-* **Número:** 10
-* **Título:** Administrar pedidos realizados en la tienda
-* **Descripción:** Como administrador de la tienda en línea, quiero poder administrar los pedidos realizados en la tienda para garantizar que los pedidos se cumplan de manera eficiente y efectiva.
-* **Criterios de aceptación:**
-    * **Debe existir una API para administrar pedidos.**
-    * **Los administradores deben poder ver una lista de todos los pedidos realizados.**
-    * **Los administradores deben poder cambiar el estado de los pedidos.**
-    * **Los administradores deben poder generar informes sobre los pedidos.**
